@@ -6,7 +6,7 @@
 
 ## Project Overview
 
-This project analyzes **3 years of gas price data** (2022-2024) from over 14,000 gas stations across France using Apache Spark. We build a complete data pipeline: from data collection to price forecasting.
+This project analyzes **3 years of gas price data** (2022-2024) from over 10,000 gas stations across France using Apache Spark. We build a complete data pipeline: from data collection to price forecasting.
 
 ### Objectives
 - Load and process gas price data with **PySpark**
@@ -18,16 +18,14 @@ This project analyzes **3 years of gas price data** (2022-2024) from over 14,000
 
 ## Dataset
 
-| File | Description | File's size |
+| File | Description | Records |
 |------|-------------|---------|
-| Prix2022S1.csv | Prices Jan-Jun 2022 | ~178MB |
-| Prix2022S2.csv | Prices Jul-Dec 2022 | ~156MB |
-| Prix2023.csv | Prices 2023 | ~322MB |
-| Prix2024.csv | Prices 2024 | ~310MB |
-| Stations2024.csv | Station locations | ~2.6K |
-| Services2024.csv | Station services | ~980K |
-
-The total price records is `14,214,837`
+| Prix2022S1.csv | Prices Jan-Jun 2022 | ~15M |
+| Prix2022S2.csv | Prices Jul-Dec 2022 | ~15M |
+| Prix2023.csv | Prices 2023 | ~30M |
+| Prix2024.csv | Prices 2024 | ~30M |
+| Stations2024.csv | Station locations | ~10K |
+| Services2024.csv | Station services | ~10K |
 
 **Source:** [French Government Open Data](https://www.prix-carburants.gouv.fr/) via [GitHub](https://github.com/rvm-courses/GasPrices)
 
@@ -35,7 +33,7 @@ The total price records is `14,214,837`
 - **Gazole** (Diesel) - Most common
 - **SP98** (Premium Unleaded 98)
 - **E10** (Unleaded with 10% ethanol)
-- **E85** (85% ethanol - flex gas)
+- **E85** (85% ethanol - flex fuel)
 
 ---
 
@@ -46,10 +44,9 @@ The total price records is `14,214,837`
 ![Gas Price Evolution](./figures/gas_prices_evolution.png)
 
 **Key Observations:**
-
-- **2022 Energy Crisis**: Sharp price spike around week 20-25 (Probably Ukraine war impact)
+- **2022 Energy Crisis**: Sharp price spike around week 20-25 (Ukraine war impact)
 - **Peak prices**: ~2.20 €/L for SP98, ~2.15 €/L for Gazole
-- **E85**: Consistently cheapest (~0.80-1.15 €/L) 
+- **E85**: Consistently cheapest (~0.80-1.15 €/L) but limited availability
 - **2023-2024**: Gradual stabilization around 1.70-1.90 €/L
 - **Price hierarchy**: SP98 > E10 > Gazole > E85
 
@@ -90,7 +87,8 @@ We built models to predict next-day gas prices using **lag features** (past pric
 
 **Interpretation:**
 - Points close to the red diagonal = good predictions
-- Linear Regression performs slightly better (R2 = 0.9569)
+- Linear Regression performs slightly better (R² = 0.9569)
+- Both models explain >92% of price variance
 
 ---
 
@@ -101,11 +99,11 @@ We built models to predict next-day gas prices using **lag features** (past pric
 **Most Important Features:**
 1. **price_lag_1** (35%) - Yesterday's price is the best predictor
 2. **price_lag_2** (25%) - Price 2 days ago
-3. **price_rolling_7d** (19%) - 7-day moving average 
+3. **price_rolling_7d** (19%) - 7-day moving average
 4. **price_lag_3** (14%) - Price 3 days ago
 5. **price_lag_7** (4%) - Same day last week
 
-**Least Important from random forest:** `day_of_week`, `month`, `day_of_month` (< 2% combined)
+**Least Important from random forest:** `day_of_week`, `month`, `day_of_month` (<2% combined)
 
 **Conclusion:** Gas prices are highly autocorrelated - recent prices are the best predictors of future prices. Calendar features have minimal impact.
 
@@ -115,7 +113,7 @@ We built models to predict next-day gas prices using **lag features** (past pric
 
 | Tool | Purpose |
 |------|---------|
-| **PySpark** | Big data processing (Billion of records) |
+| **PySpark** | Big data processing (~90M records) |
 | **Spark SQL** | Data aggregation and queries |
 | **Spark ML** | Machine learning pipelines |
 | **Matplotlib/Seaborn** | Static visualizations |
@@ -150,9 +148,8 @@ We built models to predict next-day gas prices using **lag features** (past pric
 ### Prerequisites
 ```bash
 pip install numpy pandas pyyaml pyspark matplotlib seaborn geopandas folium
-```
 
-`A java version installed`
+```
 
 ### Execution
 1. Download data files from [GitHub](https://github.com/rvm-courses/GasPrices)
@@ -177,7 +174,7 @@ Week Index = floor((Current Date - First Date) / 7) + 1
 
 ## 👤 Author
 
-**[Glorie METSA WOWO](https://www.linkedin.com/in/glorie-wowo-data-science-edtech/)**  
+**[Glorie METSA WOWO]**  
 January 2026
 
 ---

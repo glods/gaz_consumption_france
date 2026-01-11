@@ -1,0 +1,22 @@
+
+# Gas Prices Project Configuration
+# ================================
+
+# Data location  . The current directory
+data_directory: "./data"
+
+# Years to process
+first_year: 2022
+last_year: 2024
+
+# GitHub source
+github_base_url: "https://raw.githubusercontent.com/rvm-courses/GasPrices/master"
+
+# Gas types to exclude (determined after exploratory analysis). Useful to continue updating the configuration file even within the code
+exclude_gas_types: []
+
+# Spark configuration
+spark:
+  app_name: "GasConsumptionFrance"
+  master: "local[*]"
+  driver_memory: "4g"
