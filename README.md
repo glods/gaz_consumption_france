@@ -53,6 +53,7 @@ The total price records is `14,214,837`
 - **2023-2024**: Gradual stabilization around 1.70-1.90 €/L
 - **Price hierarchy**: SP98 > E10 > Gazole > E85
 
+
 ---
 
 ### 2. Geographic Analysis - Price Index by Department
@@ -70,6 +71,7 @@ Interactive maps showing which departments are cheaper (green) or more expensive
 - `= 1.0` -> Station price equals national average
 - `> 1.0` -> More expensive than average (red)
 - `< 1.0` -> Cheaper than average (green)
+- In general, Gas is more expensive in Paris and its surroundings 
 
 ---
 
