@@ -72,6 +72,7 @@ Interactive maps showing which departments are cheaper (green) or more expensive
 - `> 1.0` -> More expensive than average (red)
 - `< 1.0` -> Cheaper than average (green)
 - In general, Gas is more expensive in Paris and its surroundings 
+- E85 is highly expensive in Corse
 
 ---
 
