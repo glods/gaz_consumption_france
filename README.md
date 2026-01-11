@@ -134,15 +134,15 @@ We built models to predict next-day gas prices using **lag features** (past pric
 │   ├── Prix2024.csv
 │   ├── Stations2024.csv
 │   └── Services2024.csv
+├──figures/
+|   |---gas_prices_evolution.png         # Price evolution chart
+|   ├── model_dispersion_plot.png        # Model evaluation
+|   ├── feature_importance.png           # Feature importance
+|   ├── france_gas_prices_map*.html      # Interactive maps
 ├── gas_consumption_france.ipynb    # Main notebook
 ├── config.yaml                      # Configuration file
-├── gas_prices_evolution.png         # Price evolution chart
-├── model_dispersion_plot.png        # Model evaluation
-├── feature_importance.png           # Feature importance
-├── france_gas_prices_map*.html      # Interactive maps
 └── README.md
 ```
-
 ---
 
 ## How to Run
