@@ -81,8 +81,8 @@ We built models to predict next-day gas prices using **lag features** (past pric
 
 | Model | R2 | RMSE | MAE |
 |-------|-----|------|-----|
-| **Linear Regression** | **0.9569** | - | - |
-| Random Forest | 0.9241 | - | - |
+| **Linear Regression** | **0.9569** | 0.0163 | 0.0121 |
+| Random Forest | 0.9241 |  0.0216  | 0.0152 |
 
 #### Dispersion Plot (Actual vs Predicted)
 
