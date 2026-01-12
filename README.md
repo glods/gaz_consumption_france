@@ -58,7 +58,8 @@ The total price records is `14,214,837`
 
 ### 2. Geographic Analysis - Price Index by Department
 
-Interactive maps showing which departments are cheaper (green) or more expensive (red) than the national average.
+- **Interactive maps** showing which departments are cheaper (green) or more expensive (red) than the national average.
+Dowmload the following files to visualise it
 
 | Gas Type | Map |
 |----------|-----|
@@ -66,6 +67,19 @@ Interactive maps showing which departments are cheaper (green) or more expensive
 | SP98 | [View Map](./figures/france_gas_prices_mapSP98.html) |
 | E10 | [View Map](./figures/france_gas_prices_mapE10.html) |
 | E85 | [View Map](./figures/france_gas_prices_mapE85.html) |
+
+
+- **Static map**
+<table>
+  <tr>
+    <td align="center"><img src="./figures/gazole.png" width="400"/><br><b>Gazole</b></td>
+    <td align="center"><img src="./figures/sp98.png" width="400"/><br><b>SP98</b></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="./figures/E10.png" width="400"/><br><b>E10</b></td>
+    <td align="center"><img src="./figures/E85.png" width="400"/><br><b>E85</b></td>
+  </tr>
+</table>
 
 **Price Index Interpretation:**
 - `= 1.0` -> Station price equals national average
