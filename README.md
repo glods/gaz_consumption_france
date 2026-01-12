@@ -72,13 +72,15 @@ Interactive maps showing which departments are cheaper (green) or more expensive
 - `> 1.0` -> More expensive than average (red)
 - `< 1.0` -> Cheaper than average (green)
 - In general, Gas is more expensive in Paris and its surroundings 
-- E85 is highly expensive in Corse
+- 'E85` is highly expensive in Corse
 
 ---
 
 ### 3. Price Forecasting Model
 
 We built models to predict next-day gas prices using **lag features** (past prices as inputs).
+
+This prediction uses the  Gazole gas .
 
 #### Model Comparison
 
@@ -109,6 +111,9 @@ We built models to predict next-day gas prices using **lag features** (past pric
 5. **price_lag_7** (4%) - Same day last week
 
 **Least Important from random forest:** `day_of_week`, `month`, `day_of_month` (< 2% combined)
+
+![Feature Importance LR](./figures/feature_importance_lr.png)
+
 
 **Conclusion:** Gas prices are highly autocorrelated - recent prices are the best predictors of future prices. Calendar features have minimal impact.
 
