@@ -82,11 +82,12 @@ Dowmload the following files to visualise it
 </table>
 
 **Price Index Interpretation:**
+
 - `= 1.0` -> Station price equals national average
 - `> 1.0` -> More expensive than average (red)
 - `< 1.0` -> Cheaper than average (green)
 - In general, Gas is more expensive in Paris and its surroundings 
-- 'E85` is highly expensive in Corse
+- `E85` and `E10` is highly expensive in Corse
 
 ---
 
